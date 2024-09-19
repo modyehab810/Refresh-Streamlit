@@ -66,6 +66,9 @@ def run():
                               "last_price", "pnl", "buy_quantity",
                               "sell_quantity", "sell_price"]
 
+        target_columns["Account"] = target_columns["Account"].split("/")[-1]
+        
+
         return df[target_columns]
 
     def get_details_data():
@@ -84,7 +87,6 @@ def run():
     @st.experimental_dialog("Details About Account", width="large")
     def details_data(df, selected_account):
 
-        selected_account = selected_account.split("/")[-1]
         
         st.subheader(f"Details About {selected_account}")
 
