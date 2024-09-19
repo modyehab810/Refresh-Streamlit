@@ -115,7 +115,7 @@ def run():
         styled_df = details_df_filt.style.applymap(
             highlight_cells, subset=['status'])
 
-        st.dataframe(details_df_filt, use_container_width=True)
+        st.dataframe(styled_df, use_container_width=True)
     # Initialize session state
 
     if 'selected_row' not in st.session_state:
