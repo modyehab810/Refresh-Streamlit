@@ -93,6 +93,7 @@ def run():
         st.dataframe(detials, use_container_width=True)
 
         # ///// Detals
+        selected_account = selected_account.split("/")[-1]
 
         details_df = get_details_data()
         filt = details_df["account_id"] == selected_account
