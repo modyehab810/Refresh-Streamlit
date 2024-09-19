@@ -65,8 +65,6 @@ def run():
             target_columns = ["Account", "tradingsymbol", "quantity", "average_price",
                               "last_price", "pnl", "buy_quantity",
                               "sell_quantity", "sell_price"]
-
-        target_columns["Account"] = target_columns["Account"].split("/")[-1]
         
 
         return df[target_columns]
@@ -98,6 +96,8 @@ def run():
         st.dataframe(detials, use_container_width=True)
 
         # ///// Detals
+
+        selected_account = selected_account.split("/")[-1]
 
         details_df = get_details_data()
         filt = details_df["account_id"] == selected_account
