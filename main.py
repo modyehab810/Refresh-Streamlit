@@ -68,7 +68,7 @@ def run():
 
         return df[target_columns]
 
-    def get_setails_data():
+    def get_details_data():
 
         details_df = pd.read_json("transactions_details.json")
         details_df = details_df[["account_id", "tradingsymbol", "status"]]
@@ -94,7 +94,7 @@ def run():
 
         # ///// Detals
 
-        details_df = get_setails_data()
+        details_df = get_details_data()
         filt = details_df["account_id"] == selected_account
         details_df_filt = details_df[filt]
 
